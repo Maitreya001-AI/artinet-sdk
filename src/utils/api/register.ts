@@ -96,9 +96,11 @@ export async function register(card: AgentCard): Promise<string> {
     logInfo("A2AServer", "Registration", registration);
 
     const validator = new MetadataValidator();
-    const { isValid, error: validationError } =
+    const { isValid, errors } =
       await validator.validateMetadata(registration);
     if (!isValid) {
+      const formattedErrors = validator.formatErrors(errors);
+      const validationError = JSON.stringify(formattedErrors);
       logDebug("A2AServer", "Validation failed", validationError);
       throw new Error(validationError);
     }
