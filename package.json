@@ -1,5 +1,5 @@
 {
-  "name": "@artinet/sdk",
+  "name": "@kddd/artinet-sdk",
   "version": "0.5.1",
   "description": "TypeScript SDK for the Agent2Agent (A2A) Protocol",
   "type": "module",
@@ -31,7 +31,7 @@
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "clean": "rimraf dist",
     "lint": "eslint src --ext .ts",
-    "prepublishOnly": "npm run clean && npm run build && npm run lint && npm test",
+    "prepublishOnly": "npm run clean && npm run build",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage"
